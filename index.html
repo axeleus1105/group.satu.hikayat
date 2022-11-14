@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebuah Hikayat</title>
+    <link rel="stylesheet" href="templates.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: rgb(37, 36, 36);
+            --col-deepblue: #e50914;
+        }
+
+        @font-face {
+            font-family: gruffly;
+            src: url(Gruffly.otf);
+        }
+
+        .bg {
+            background: url(" fuji-mountain.jpg");
+            height: 90vh;
+            background-size: 100% 90%;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -100;
+        }
+
+        .bg font{
+            position: absolute;
+            top: 60%;
+            left: 15.5%;
+            transform: translate(-50%, -50%);
+            color:rgb(241, 239, 235);
+            font-size: 50px;
+            font-family:gruffly;
+            font-weight: 100;
+            width: 100;
+        }
+
+        .bg h6{
+            position:absolute;
+            display: flex;
+            top: 69%;
+            left: 11%;
+            width: 35%;
+            text-shadow: #222;
+            box-shadow:#222;
+            transform: translate(-50%, -50%);
+            color:rgb(241, 239, 235);
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            
+        }
+
+        h6 p{
+            padding-left: 32%;    
+        }
+
+        .middle
+        { 
+            position: absolute;
+            top: 73%;
+            left: 4.2%;
+            transform: translate(-50%-50%);
+            text-align: center;
+        }
+        .btn{
+            background: #e5091473  ;
+            border:0.5px solid  rgb(39, 22, 22);
+            color: rgba(255, 255, 255, 0.623);
+            font-family: monospace; 
+            text-transform: uppercase;
+            padding: 8px 10px;
+            min-width: 150px;
+            margin: 10px;
+            cursor: pointer;
+            transition:color 0.4s linear;
+            position: relative;
+            z-index: 1;
+        }
+        .btn:hover{
+            color: rgb(255, 255, 255);
+            border:none;
+
+        }
+        .btn::before
+        {
+            content:"";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background:#e50914;
+            z-index: 0;
+            transition: 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function:cubic-bezier(0.5,1.6,0.4,0.7);
+            z-index: -1;
+        }
+        .btn1::before
+        {
+            transform: scaleY(0);
+        }
+        .btn1:hover::before
+        {
+            transform: scaleY(1);
+        }
+
+        footer{
+            display: none;
+        }
+
+        @media screen and (max-width: 768px){
+            .bg{
+                height: 51vh;
+                background-size: 100% 69%;
+            }
+            .bg font{
+                top: 29.5%;
+                left: 50%;
+                transform: translate(-50%,-40%);
+                font-size: 40px;
+            }
+            .bg h6{
+                top: 35%;
+                left: 42%;
+                transform: translate(-50%);
+                width: 50%;
+                font-size: 15px;
+                text-align: center;
+            }
+
+            font{
+                font-size: 30px;
+                top: 50%;
+                transition: 0.3s ease-in-out;
+            }
+
+            footer{
+                display: contents;
+            }
+
+            .middle{
+                left: 49.5%;
+                top: 44.5%;
+                transform: translate(-50%,-50%);
+            }
+
+            .btn{
+                min-width: 80px;
+                font-size: 13px;
+            }
+
+        }
+
+        @media screen and (max-width: 576px){
+            .bg{
+                height: 57vh;
+                background-size: 100% 90%;
+            }
+            .bg font {
+                top: 38%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 30px;
+            }
+            .bg h6{
+                top: 44.5%;
+                left: 40%;
+                transform: translate(-50%,-50%);
+                font-size: 13px;
+                width: 69%;
+            }
+            .middle{
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+            }
+            .btn{
+                min-width: 70px;
+                padding: 4.5px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>HOME</h1>
+        <ul class="sub-nav">
+            <div class="garis"></div>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="hikayat.html">Hikayat</a></li>
+            <li><a href="group.html">Group</a></li>
+            
+        </ul>
+
+        <div class="menu-toggle">
+            <input type="checkbox" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="bg">
+        <font>Group One Project</font>
+        <h6><p>this web contains about an old story is called "Hikayat"</p></h6>
+        <div class="middle">
+            <a href="hikayat.html">
+            <button class="btn btn1" id="cerita">see more</button>
+            </a>    
+        </div>
+    </div>
+    <footer>
+        <svg viewBox="0 0 120 28">
+         <defs> 
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="
+                   1 0 0 0 0  
+                   0 1 0 0 0  
+                   0 0 1 0 0  
+                   0 0 0 13 -9" result="goo" />
+              <xfeBlend in="SourceGraphic" in2="goo" />
+              </filter>
+             <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+          </defs> 
+        
+           <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
+           <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
+         
+         
+          <g class="gooeff" filter="url(#goo)">
+          <circle class="drop drop1" cx="20" cy="2" r="8.8"  />
+          <circle class="drop drop2" cx="25" cy="2.5" r="7.5"  />
+          <circle class="drop drop3" cx="16" cy="2.8" r="9.2"  />
+          <circle class="drop drop4" cx="18" cy="2" r="8.8"  />
+          <circle class="drop drop5" cx="22" cy="2.5" r="7.5"  />
+          <circle class="drop drop6" cx="26" cy="2.8" r="9.2"  />
+          <circle class="drop drop1" cx="5" cy="4.4" r="8.8"  />
+          <circle class="drop drop2" cx="5" cy="4.1" r="7.5"  />
+          <circle class="drop drop3" cx="8" cy="3.8" r="9.2"  />
+          <circle class="drop drop4" cx="3" cy="4.4" r="8.8"  />
+          <circle class="drop drop5" cx="7" cy="4.1" r="7.5"  />
+          <circle class="drop drop6" cx="10" cy="4.3" r="9.2"  />
+          
+          <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8"  />
+          <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5"  />
+          <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2"  />
+            <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8"  />
+          <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5"  />
+          <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2"  />
+          <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+         </g>  
+            <!-- g mask="url(#xxx)">
+            <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+            </g>
+          </g -->
+        
+        </svg>
+        
+            <div class="logo">
+                <a href="">
+                    <img src=" instagram.png" alt="">
+                </a>
+                <a href="">
+                    <img src=" twitter.png" alt="">
+                </a>
+                <a href="">
+                    <img src=" facebook.png" alt="">
+                </a>
+            </div>
+            <div class="wm">by Group one </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
